@@ -1,0 +1,38 @@
+spring:
+  mvc:
+    pathmatch:
+      use-suffix-pattern: true
+  thymeleaf:
+    cache: false
+    prefix:  classpath:/templates/
+    suffix: .html
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo1
+    username: root
+    password: 1234
+
+
+
+  resources:
+    static-locations: classpath:/resources/,classpath:/static/,classpath:/jquery/,classpath:/templates/
+    #mq 默认点对点
+  jms:
+    pub-sub-domain: true
+#配置方法后缀
+server:
+  servlet-path: "*.do"
+
+#sql语句
+#logging:
+#  level:
+#    com:
+#     huayu:
+#       test:
+#         mapper: debug
+
+mybatis-plus:
+  type-aliases-package: com.huayu
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  cache-enabled: true
